@@ -58,10 +58,13 @@ const colors = [
 ];
 
 let correct = 0, total = 0;
+let startTime, timerInterval;
 const colorBox = document.getElementById("colorBox");
 const optionsDiv = document.getElementById("options");
 const feedbackDiv = document.getElementById("feedback");
 const scoreP = document.getElementById("score");
+const progressBar = document.getElementById("progressBar");
+const timerP = document.getElementById("timer");
 const correctSound = new Audio("correct.mp3");
 const wrongSound = new Audio("wrong.mp3");
 
@@ -70,6 +73,23 @@ function shuffle(arr) {
     let j = Math.floor(Math.random() * (i + 1));
     [arr[i], arr[j]] = [arr[j], arr[i]];
   }
+}
+
+function updateProgressBar() {
+  const progress = (total / colors.length) * 100;
+  progressBar.innerHTML = `<div style="width: ${progress}%"></div>`;
+}
+
+function startTimer() {
+  startTime = Date.now();
+  timerInterval = setInterval(() => {
+    const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+    timerP.innerText = `Time: ${elapsedTime}s`;
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
 }
 
 function nextQuestion() {
@@ -99,10 +119,37 @@ function nextQuestion() {
         wrongSound.play();
       }
       scoreP.innerText = `Score: ${correct} / ${total}`;
+      updateProgressBar();
       setTimeout(nextQuestion, 1500);
     };
     optionsDiv.appendChild(btn);
   });
 }
 
-window.onload = nextQuestion;
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  if (sidebar.style.left === "0px") {
+    sidebar.style.left = "-250px";
+  } else {
+    sidebar.style.left = "0px";
+  }
+}
+
+function showLastScores() {
+  alert(`Last Scores:\nCorrect: ${correct}\nTotal: ${total}`);
+}
+
+function resetQuiz() {
+  correct = 0;
+  total = 0;
+  scoreP.innerText = `Score: ${correct} / ${total}`;
+  progressBar.innerHTML = `<div style="width: 0%"></div>`;
+  stopTimer();
+  startTimer();
+  nextQuestion();
+}
+
+window.onload = () => {
+  startTimer();
+  nextQuestion();
+};
