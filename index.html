@@ -6,76 +6,31 @@
   <title>ColorSense Quiz</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f8f9fa;
-      color: #333;
-      text-align: center;
-    }
-    header {
-      background: linear-gradient(45deg, #ff69b4, #ff1493);
-      color: white;
-      padding: 20px;
-      font-size: 28px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .color-box {
-      width: 200px;
-      height: 200px;
-      margin: 20px auto;
-      border: 2px solid #ccc;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .color-box:hover {
-      transform: scale(1.05);
-    }
-    .options button {
-      display: block;
-      margin: 10px auto;
-      padding: 12px 24px;
-      font-size: 18px;
-      border-radius: 12px;
-      border: none;
-      background: #eee;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .options button:hover {
-      background-color: #ddd;
-      transform: scale(1.05);
-    }
-    .feedback {
-      font-size: 20px;
-      margin-top: 10px;
-    }
-    .learn-btn {
-      margin-top: 20px;
-      font-size: 16px;
-      background: linear-gradient(45deg, #ff69b4, #ff1493);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .learn-btn:hover {
-      background-color: #ff1493;
-      transform: scale(1.05);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>🎨 ColorSense Quiz</header>
-  <div class="color-box" id="colorBox"></div>
-  <div class="options" id="options"></div>
-  <div class="feedback" id="feedback"></div>
-  <p id="score">Score: 0 / 0</p>
-  <button class="learn-btn" onclick="location.href='learn.html'">📚 Learn Colors</button>
+  <nav class="menu">
+    <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
+  </nav>
+  <aside class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">✖</button>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="learn.html">📚 Learn Colors</a></li>
+      <li><a href="#" onclick="showLastScores()">📈 Last Scores</a></li>
+      <li><a href="#" onclick="resetQuiz()">🔄 Reset Quiz</a></li>
+    </ul>
+  </aside>
+  <div class="container">
+    <div class="color-box" id="colorBox"></div>
+    <div class="options" id="options"></div>
+    <div class="feedback" id="feedback"></div>
+    <p id="score">Score: 0 / 0</p>
+    <div class="progress-bar" id="progressBar"></div>
+    <p id="timer">Time: 0s</p>
+    <button class="learn-btn" onclick="location.href='learn.html'">📚 Learn Colors</button>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
