@@ -1,0 +1,13 @@
+{
+  "name": "ColorSense Quiz",
+  "short_name": "ColorSense",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff69b4",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }]
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ColorSense Quiz</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #ff69b4;
+      color: white;
+      padding: 15px;
+      font-size: 24px;
+    }
+    .color-box {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+    }
+    .options button {
+      display: block;
+      margin: 10px auto;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: none;
+      background: #eee;
+      cursor: pointer;
+    }
+    .feedback {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    .learn-btn {
+      margin-top: 20px;
+      font-size: 16px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>🎨 ColorSense Quiz</header>
+  <div class="color-box" id="colorBox"></div>
+  <div class="options" id="options"></div>
+  <div class="feedback" id="feedback"></div>
+  <p id="score">Score: 0 / 0</p>
+  <button class="learn-btn" onclick="location.href='learn.html'">📚 Learn Colors</button>
+  <script src="script.js"></script>
+</body>
+</html>
