@@ -6,31 +6,30 @@
   <title>ColorSense Quiz</title>
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>🎨 ColorSense Quiz</header>
-  <nav class="menu">
-    <button class="menu-btn" onclick="toggleSidebar()">☰ Menu</button>
-  </nav>
-  <aside class="sidebar" id="sidebar">
-    <button class="close-btn" onclick="toggleSidebar()">✖</button>
-    <h2>Menu</h2>
-    <ul>
-      <li><a href="learn.html">📚 Learn Colors</a></li>
-      <li><a href="#" onclick="showLastScores()">📈 Last Scores</a></li>
-      <li><a href="#" onclick="resetQuiz()">🔄 Reset Quiz</a></li>
-    </ul>
-  </aside>
-  <div class="container">
-    <div class="color-box" id="colorBox"></div>
-    <div class="options" id="options"></div>
-    <div class="feedback" id="feedback"></div>
-    <p id="score">Score: 0 / 0</p>
-    <div class="progress-bar" id="progressBar"></div>
-    <p id="timer">Time: 0s</p>
-    <button class="learn-btn" onclick="location.href='learn.html'">📚 Learn Colors</button>
+  <header class="text-center py-3 bg-primary text-white">🎨 ColorSense Quiz</header>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="color-box mb-3" id="colorBox"></div>
+        <div class="options mb-3" id="options"></div>
+        <div class="feedback mb-3" id="feedback"></div>
+        <p id="score" class="mb-3">Score: 0 / 0</p>
+        <div class="progress mb-3">
+          <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;"></div>
+        </div>
+        <p id="timer" class="mb-3">Time: 0s</p>
+        <button class="btn btn-info mb-3" onclick="showHint()">💡 Show Hint</button>
+        <button class="btn btn-secondary mb-3" onclick="location.href='learn.html'">📚 Learn Colors</button>
+      </div>
+    </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
