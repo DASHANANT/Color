@@ -1,60 +1,60 @@
 const colors = [
-  { name: "crimson", hex: "#dc143c" },
-  { name: "teal", hex: "#008080" },
-  { name: "olive", hex: "#808000" },
-  { name: "goldenrod", hex: "#daa520" },
-  { name: "indigo", hex: "#4b0082" },
-  { name: "coral", hex: "#ff7f50" },
-  { name: "turquoise", hex: "#40e0d0" },
-  { name: "slateblue", hex: "#6a5acd" },
-  { name: "salmon", hex: "#fa8072" },
-  { name: "peru", hex: "#cd853f" },
-  { name: "tomato", hex: "#ff6347" },
-  { name: "orchid", hex: "#da70d6" },
-  { name: "deeppink", hex: "#ff1493" },
-  { name: "khaki", hex: "#f0e68c" },
-  { name: "lavender", hex: "#e6e6fa" },
-  { name: "plum", hex: "#dda0dd" },
-  { name: "seagreen", hex: "#2e8b57" },
-  { name: "dodgerblue", hex: "#1e90ff" },
-  { name: "firebrick", hex: "#b22222" },
-  { name: "steelblue", hex: "#4682b4" },
-  { name: "beige", hex: "#f5f5dc" },
-  { name: "maroon", hex: "#800000" },
-  { name: "navy", hex: "#000080" },
-  { name: "lime", hex: "#00ff00" },
-  { name: "aqua", hex: "#00ffff" },
-  { name: "fuchsia", hex: "#ff00ff" },
-  { name: "purple", hex: "#800080" },
-  { name: "cyan", hex: "#00ffff" },
-  { name: "mintcream", hex: "#f5fffa" },
-  { name: "mistyrose", hex: "#ffe4e1" },
-  { name: "peachpuff", hex: "#ffdab9" },
-  { name: "palegreen", hex: "#98fb98" },
-  { name: "palevioletred", hex: "#db7093" },
-  { name: "mediumorchid", hex: "#ba55d3" },
-  { name: "mediumseagreen", hex: "#3cb371" },
-  { name: "mediumslateblue", hex: "#7b68ee" },
-  { name: "mediumspringgreen", hex: "#00fa9a" },
-  { name: "mediumturquoise", hex: "#48d1cc" },
-  { name: "mediumvioletred", hex: "#c71585" },
-  { name: "midnightblue", hex: "#191970" },
-  { name: "moccasin", hex: "#ffe4b5" },
-  { name: "navajowhite", hex: "#ffdead" },
-  { name: "oldlace", hex: "#fdf5e6" },
-  { name: "papayawhip", hex: "#ffefd5" },
-  { name: "powderblue", hex: "#b0e0e6" },
-  { name: "rosybrown", hex: "#bc8f8f" },
-  { name: "saddlebrown", hex: "#8b4513" },
-  { name: "sandybrown", hex: "#f4a460" },
-  { name: "sienna", hex: "#a0522d" },
-  { name: "skyblue", hex: "#87ceeb" },
-  { name: "snow", hex: "#fffafa" },
-  { name: "tan", hex: "#d2b48c" },
-  { name: "thistle", hex: "#d8bfd8" },
-  { name: "wheat", hex: "#f5deb3" },
-  { name: "whitesmoke", hex: "#f5f5f5" },
-  { name: "yellowgreen", hex: "#9acd32" }
+  { name: "Crimson", hex: "#dc143c", base: "Red" },
+  { name: "Teal", hex: "#008080", base: "Green" },
+  { name: "Olive", hex: "#808000", base: "Green" },
+  { name: "Goldenrod", hex: "#daa520", base: "Yellow" },
+  { name: "Indigo", hex: "#4b0082", base: "Blue" },
+  { name: "Coral", hex: "#ff7f50", base: "Orange" },
+  { name: "Turquoise", hex: "#40e0d0", base: "Blue" },
+  { name: "Slate Blue", hex: "#6a5acd", base: "Blue" },
+  { name: "Salmon", hex: "#fa8072", base: "Pink" },
+  { name: "Peru", hex: "#cd853f", base: "Brown" },
+  { name: "Tomato", hex: "#ff6347", base: "Red" },
+  { name: "Orchid", hex: "#da70d6", base: "Purple" },
+  { name: "Deep Pink", hex: "#ff1493", base: "Pink" },
+  { name: "Khaki", hex: "#f0e68c", base: "Yellow" },
+  { name: "Lavender", hex: "#e6e6fa", base: "Purple" },
+  { name: "Plum", hex: "#dda0dd", base: "Purple" },
+  { name: "Sea Green", hex: "#2e8b57", base: "Green" },
+  { name: "Dodger Blue", hex: "#1e90ff", base: "Blue" },
+  { name: "Firebrick", hex: "#b22222", base: "Red" },
+  { name: "Steel Blue", hex: "#4682b4", base: "Blue" },
+  { name: "Beige", hex: "#f5f5dc", base: "Brown" },
+  { name: "Maroon", hex: "#800000", base: "Red" },
+  { name: "Navy", hex: "#000080", base: "Blue" },
+  { name: "Lime", hex: "#00ff00", base: "Green" },
+  { name: "Aqua", hex: "#00ffff", base: "Blue" },
+  { name: "Fuchsia", hex: "#ff00ff", base: "Pink" },
+  { name: "Purple", hex: "#800080", base: "Purple" },
+  { name: "Cyan", hex: "#00ffff", base: "Blue" },
+  { name: "Mint Cream", hex: "#f5fffa", base: "Green" },
+  { name: "Misty Rose", hex: "#ffe4e1", base: "Pink" },
+  { name: "Peach Puff", hex: "#ffdab9", base: "Orange" },
+  { name: "Pale Green", hex: "#98fb98", base: "Green" },
+  { name: "Pale Violet Red", hex: "#db7093", base: "Pink" },
+  { name: "Medium Orchid", hex: "#ba55d3", base: "Purple" },
+  { name: "Medium Sea Green", hex: "#3cb371", base: "Green" },
+  { name: "Medium Slate Blue", hex: "#7b68ee", base: "Blue" },
+  { name: "Medium Spring Green", hex: "#00fa9a", base: "Green" },
+  { name: "Medium Turquoise", hex: "#48d1cc", base: "Blue" },
+  { name: "Medium Violet Red", hex: "#c71585", base: "Pink" },
+  { name: "Midnight Blue", hex: "#191970", base: "Blue" },
+  { name: "Moccasin", hex: "#ffe4b5", base: "Yellow" },
+  { name: "Navajo White", hex: "#ffdead", base: "Yellow" },
+  { name: "Old Lace", hex: "#fdf5e6", base: "Yellow" },
+  { name: "Papaya Whip", hex: "#ffefd5", base: "Yellow" },
+  { name: "Powder Blue", hex: "#b0e0e6", base: "Blue" },
+  { name: "Rosy Brown", hex: "#bc8f8f", base: "Brown" },
+  { name: "Saddle Brown", hex: "#8b4513", base: "Brown" },
+  { name: "Sandy Brown", hex: "#f4a460", base: "Brown" },
+  { name: "Sienna", hex: "#a0522d", base: "Brown" },
+  { name: "Sky Blue", hex: "#87ceeb", base: "Blue" },
+  { name: "Snow", hex: "#fffafa", base: "White" },
+  { name: "Tan", hex: "#d2b48c", base: "Brown" },
+  { name: "Thistle", hex: "#d8bfd8", base: "Purple" },
+  { name: "Wheat", hex: "#f5deb3", base: "Yellow" },
+  { name: "White Smoke", hex: "#f5f5f5", base: "White" },
+  { name: "Yellow Green", hex: "#9acd32", base: "Green" }
 ];
 
 let correct = 0, total = 0;
@@ -77,7 +77,7 @@ function shuffle(arr) {
 
 function updateProgressBar() {
   const progress = (total / colors.length) * 100;
-  progressBar.innerHTML = `<div style="width: ${progress}%"></div>`;
+  progressBar.style.width = `${progress}%`;
 }
 
 function startTimer() {
@@ -107,6 +107,7 @@ function nextQuestion() {
   optionsDiv.innerHTML = "";
   options.forEach(opt => {
     const btn = document.createElement("button");
+    btn.className = "btn btn-outline-primary btn-block";
     btn.textContent = opt;
     btn.onclick = () => {
       total++;
@@ -126,24 +127,16 @@ function nextQuestion() {
   });
 }
 
-function toggleSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  if (sidebar.style.left === "0px") {
-    sidebar.style.left = "-250px";
-  } else {
-    sidebar.style.left = "0px";
-  }
-}
-
-function showLastScores() {
-  alert(`Last Scores:\nCorrect: ${correct}\nTotal: ${total}`);
+function showHint() {
+  const correctColor = colors.find(color => color.hex === colorBox.style.background);
+  feedbackDiv.innerText = `Hint: This color is a shade of ${correctColor.base}`;
 }
 
 function resetQuiz() {
   correct = 0;
   total = 0;
   scoreP.innerText = `Score: ${correct} / ${total}`;
-  progressBar.innerHTML = `<div style="width: 0%"></div>`;
+  progressBar.style.width = "0%";
   stopTimer();
   startTimer();
   nextQuestion();
