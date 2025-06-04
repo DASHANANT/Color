@@ -14,17 +14,23 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-12 text-center">
-        <div class="color-box mb-3" id="colorBox"></div>
-        <div class="options mb-3" id="options"></div>
-        <div class="feedback mb-3" id="feedback"></div>
-        <p id="score" class="mb-3">Score: 0 / 0</p>
-        <div class="progress mb-3">
-          <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;"></div>
+        <div id="menu">
+          <button class="btn btn-success mb-3" onclick="startIDColorQuiz()">🎮 ID Color Quiz</button>
+          <button class="btn btn-success mb-3" onclick="startGuessColorQuiz()">🎮 Guess Color Quiz</button>
+          <button class="btn btn-secondary mb-3" onclick="location.href='learn.html'">📚 Learn Colors</button>
         </div>
-        <p id="timer" class="mb-3">Time: 0s</p>
-        <button class="btn btn-info mb-3" onclick="showHint()">💡 Show Hint</button>
-        <button class="btn btn-secondary mb-3" onclick="location.href='learn.html'">📚 Learn Colors</button>
-        <button class="btn btn-success mb-3" onclick="startNameGame()">🎮 Name Game</button>
+        <div id="game" style="display: none;">
+          <div class="color-box mb-3" id="colorBox"></div>
+          <div class="options mb-3" id="options"></div>
+          <div class="feedback mb-3" id="feedback"></div>
+          <p id="score" class="mb-3">Score: 0 / 0</p>
+          <div class="progress mb-3">
+            <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;"></div>
+          </div>
+          <p id="timer" class="mb-3">Time: 0s</p>
+          <button class="btn btn-info mb-3" onclick="showHint()">💡 Show Hint</button>
+          <button class="btn btn-secondary mb-3" onclick="location.href='learn.html'">📚 Learn Colors</button>
+        </div>
       </div>
     </div>
   </div>

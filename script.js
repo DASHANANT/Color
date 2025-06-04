@@ -129,7 +129,7 @@ function nextQuestion() {
 
 function showHint() {
   const correctColor = colors.find(color => color.hex === colorBox.style.background);
-  feedbackDiv.innerText = `Hint: This color is a shade of ${correctColor.base}`;
+  alert(`Hint: This color is a shade of ${correctColor.base}`);
 }
 
 function resetQuiz() {
@@ -142,10 +142,22 @@ function resetQuiz() {
   nextQuestion();
 }
 
-function startNameGame() {
+function startIDColorQuiz() {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("game").style.display = "block";
+  resetQuiz();
+}
+
+function startGuessColorQuiz() {
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("game").style.display = "block";
+  nextGuessColorQuestion();
+}
+
+function nextGuessColorQuestion() {
   feedbackDiv.innerText = "";
   const correctColor = colors[Math.floor(Math.random() * colors.length)];
-  colorBox.style.background = correctColor.hex;
+  colorBox.innerText = correctColor.name;
 
   let options = [correctColor.hex];
   while (options.length < 4) {
@@ -171,7 +183,7 @@ function startNameGame() {
       }
       scoreP.innerText = `Score: ${correct} / ${total}`;
       updateProgressBar();
-      setTimeout(startNameGame, 1500);
+      setTimeout(nextGuessColorQuestion, 1500);
     };
     optionsDiv.appendChild(btn);
   });
