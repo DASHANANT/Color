@@ -142,6 +142,53 @@ function resetQuiz() {
   nextQuestion();
 }
 
+function startNameGame() {
+  feedbackDiv.innerText = "";
+  const correctColor = colors[Math.floor(Math.random() * colors.length)];
+  colorBox.style.background = correctColor.hex;
+
+  let options = [correctColor.hex];
+  while (options.length < 4) {
+    const rand = colors[Math.floor(Math.random() * colors.length)].hex;
+    if (!options.includes(rand)) options.push(rand);
+  }
+  shuffle(options);
+
+  optionsDiv.innerHTML = "";
+  options.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "btn btn-outline-primary btn-block";
+    btn.style.background = opt;
+    btn.onclick = () => {
+      total++;
+      if (opt === correctColor.hex) {
+        correct++;
+        feedbackDiv.innerText = "✅ Correct!";
+        correctSound.play();
+      } else {
+        feedbackDiv.innerText = `❌ Wrong! It was ${correctColor.name}`;
+        wrongSound.play();
+      }
+      scoreP.innerText = `Score: ${correct} / ${total}`;
+      updateProgressBar();
+      setTimeout(startNameGame, 1500);
+    };
+    optionsDiv.appendChild(btn);
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const colorContainer = document.getElementById("colorContainer");
+
+  colors.forEach(color => {
+    const colorStrip = document.createElement("div");
+    colorStrip.className = "color-strip";
+    colorStrip.style.background = color.hex;
+    colorStrip.textContent = `${color.name} (${color.hex})`;
+    colorContainer.appendChild(colorStrip);
+  });
+});
+
 window.onload = () => {
   startTimer();
   nextQuestion();
